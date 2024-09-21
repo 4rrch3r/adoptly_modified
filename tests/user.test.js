@@ -28,7 +28,7 @@ describe('User routes', () => {
         .post(`/adoptly/users/`)
         .set('Cookie', [`access_token=${jwtWriteTokenExample};`])
         .send(newUser)
-        // .expect('Content-Type', /json/)
+        .expect('Content-Type', /json/)
         .expect(201);
       const expectedProperties = ['id','name', 'email', 'phoneNumber', 'password', 'rights', 'address', 'isActivated','activationLink','favorites'];
       for (const property of expectedProperties) {
@@ -258,7 +258,7 @@ describe('User routes', () => {
          await supertest(app)
          .put(`/adoptly/users/${res.body.id}`)
          .set('Cookie', [`access_token=${jwtWriteTokenExample};`])
-         .send({phoneNumber:user.phoneNumber})
+         .send({email:user.email})
          .expect(400);
      });
      test('should return a 400 if rights field is not enum value', async () => {
