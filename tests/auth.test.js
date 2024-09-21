@@ -73,6 +73,7 @@ describe('Register /adoptly/auth/register', () => {
     });
 describe('Login /adoptly/auth/login', () => {
         let newUser;
+        let userResponse;
         beforeEach(async() => {
           newUser = {
             name: faker.person.firstName(),
@@ -129,6 +130,7 @@ describe('Logout /adoptly/auth/logout', () => {
 });
 describe('Activate /adoptly/auth/:activationLink', () => {
     let newUser;
+    let userResponse;
         beforeEach(async() => {
           newUser = {
             name: faker.person.firstName(),
