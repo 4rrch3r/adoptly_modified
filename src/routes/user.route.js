@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const checkRights = require('../utils/checkRights');
 
-// eslint-disable-next-line import/extensions
-// eslint-disable-next-line import/extensions
 const userController = require('../controllers/index.js').userController;
 
 router.get('/me',checkRights("read"),  userController.getCurrentUser);

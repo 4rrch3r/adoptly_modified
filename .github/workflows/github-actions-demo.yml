@@ -27,3 +27,5 @@ jobs:
         JWT_TOKEN_WITH_WRITE_ROLE_EXAMPLE: ${{secrets.JWT_TOKEN_WITH_WRITE_ROLE_EXAMPLE}}
         JWT_TOKEN_WITH_WRONG_ROLE_EXAMPLE: ${{secrets.JWT_TOKEN_WITH_WRONG_ROLE_EXAMPLE}}
       run: npm run test
+    - name: Run lint
+      run: npm run lint
