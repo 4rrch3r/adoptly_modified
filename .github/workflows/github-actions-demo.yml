@@ -17,6 +17,10 @@ jobs:
       run: npm install
     - name: Run tests
       env:
+        PORT: ${{ secrets.PORT }}
+        PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
+        JWT_SECRET: ${{ secrets.JWT_SECRET }}
+        NODE_ENV: ${{ secrets.NODE_ENV }}
         MONGODB_URL: ${{ secrets.MONGODB_URL }}
         JWT_TOKEN_WITH_READ_ROLE_EXAMPLE: ${{secrets.JWT_TOKEN_WITH_READ_ROLE_EXAMPLE}}
         JWT_TOKEN_WITH_READ_ROLE_NOT_ACTIVATED_EXAMPLE: ${{secrets.JWT_TOKEN_WITH_READ_ROLE_NOT_ACTIVATED_EXAMPLE}}
