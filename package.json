@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
+    "build": "babel src --out-dir dist",
     "lint": "eslint .",
     "test": "jest -i --colors --verbose --detectOpenHandles"
   },
@@ -27,6 +28,9 @@
     "winston": "^3.9.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.25.6",
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
     "@faker-js/faker": "^8.0.2",
     "eslint": "^9.11.0",
     "globals": "^15.9.0",
